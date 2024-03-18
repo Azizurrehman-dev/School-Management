@@ -48,7 +48,7 @@ class TeacherSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Teacher
-        fields = ("id", "user", "classes")
+        fields = ("id", "user", "classe")
 
     @transaction.atomic
     def create(self, validated_data):
@@ -56,7 +56,7 @@ class TeacherSerializer(serializers.ModelSerializer):
             user_serializer = UserTeacherSerializer(data=validated_data.pop("user"))
             user_serializer.is_valid(raise_exception=True)
             teacher = Teacher(user=user_serializer.save())
-            teacher.classes.set(validated_data.get("classes"))
+            teacher.classe.set(validated_data.get("classe"))
             teacher.save()
             return teacher
         except (ValidationError, Exception) as error:

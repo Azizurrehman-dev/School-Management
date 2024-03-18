@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('title', models.CharField(max_length=255)),
                 ('students', models.ManyToManyField(to='student.student')),
-                ('subjects', models.ManyToManyField(to='class.subject')),
+                ('subjects', models.ManyToManyField(to='classes.subject')),
             ],
             options={
                 'abstract': False,

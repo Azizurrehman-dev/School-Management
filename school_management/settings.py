@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "apps.user",
     "apps.student",
-    "apps.class",
+    "apps.classes",
     "apps.teacher",
 ]
 
